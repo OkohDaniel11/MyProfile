@@ -1,0 +1,3036 @@
+/* ====================
+    START OF FONT SECTION
+    ==================== */
+
+@font-face {
+    font-family: 'Panchang';
+    src: url('../fonts/Panchang-Variable.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Iceberg';
+    src: url('../fonts/Iceberg-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Pramukh';
+    src: url('../fonts/PramukhRounded-Variable.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Pixelify';
+    src: url('../fonts/PixelifySans-VariableFont_wght.ttf') format('truetype');
+}
+
+/* ====================
+    END OF FONT SECTION
+    ==================== */
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: black;
+    font-family: 'Panchang', sans-serif;
+    color: white;
+}
+
+/* ====================
+    START OF LOADER SECTION
+    ==================== */
+
+/*Loader Style*/
+/* HTML: <div class="loader"></div> */
+
+/* Animate gradient movement */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Pulsing opacity */
+@keyframes opacityPulse {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+
+.loaderContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 9999999;
+    background-color: black;
+    pointer-events: all;
+}
+
+.wel {
+    position: relative;
+    top: 45%;
+    left: 35%;
+    font-size: 50px;
+    font-family: 'Panchang';
+    -webkit-text-stroke: 1px white;
+    color: white;
+
+    background: linear-gradient(
+        to right, 
+        #8E1ED9, 
+        #df4ba9, 
+        #f51ec7, 
+        #cf3597, 
+        #7e29b7);
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+
+    /* Animation */
+    animation: gradientShift 8s ease infinite, opacityPulse 2s ease-in-out infinite;
+    opacity: 1;
+}
+
+.come {
+    position: relative;
+    top: 22px;
+    left: -2.5%;
+    color: #f235ad;
+}
+
+.loader {
+    position: relative;
+    top: 50%;
+    left: 41.5%;
+    border-radius: 50px;
+    width: 200px;
+    height: 10px;
+    background:
+    linear-gradient(#ad2aab 0 0) 0/0% no-repeat
+    #ddd;
+    animation: l1 4.2s infinite linear;
+}
+@keyframes l1 {
+    100% {background-size:100%}
+}
+
+/* ====================
+    END OF LOADER SECTION
+    ==================== */
+
+/* ====================
+    START OF SCROLLBAR SECTION
+    ==================== */
+
+/*Scrollbar Style*/
+/* width */
+::-webkit-scrollbar {
+    width: 7px;
+    
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+    background: black; 
+}
+   
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(202, 94, 202); 
+    opacity: 0.5;
+    border-radius: 50px;
+}
+  
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(132, 74, 132); 
+    opacity: 0.1;
+    cursor: pointer;
+}
+
+/* ====================
+    END OF SCROLLBAR SECTION
+    ==================== */
+
+/* ====================
+    START OF HEADER SECTION
+    ==================== */
+
+/*Header Style*/
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28%;
+    padding: 10px 40px;
+    z-index: 999;
+    background-color: #4b4b4b5b;
+    backdrop-filter: blur(10px);
+}
+
+/* CSS */
+
+/* Enable animating an angle property */
+@property --angle {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+}
+  
+.logo {
+    --angle: 0deg;
+    position: relative;
+    display: inline-block;
+    font: 20px 'Iceberg';
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 30px;
+    background-color: #4b4b4b5b;
+    text-transform: capitalize;
+    color: white;
+    cursor: pointer;
+    z-index: 1;
+    transition: 0.5s ease-in-out;
+}
+  
+/* Trigger animation on hover */
+.logo:hover {
+    scale: 1.2;
+}
+  
+/*Header Hamburger Menu*/
+header .hamburger{
+    display: none;
+}
+
+/*Header Nav*/
+header nav ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    gap: 30px;
+    margin: 0;
+    padding: 10px;
+}
+
+
+header nav ul li a {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+    text-transform: capitalize;
+    font-family: 'Panchang';
+    font-weight: 100;
+}
+
+/*Hover button for ul a*/
+nav ul li a:after {
+    content: '';
+    position: absolute;
+    background-color: #D2A2F2;
+    border-radius: 15px;
+    left: 0;
+    bottom: -6%;
+    height: 2px;
+    width: 0;
+    transition: 0.5s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav ul li a:hover {
+    color: #D2A2F2;
+}
+
+/* ====================
+    END OF HEADER SECTION
+    ==================== */
+
+/* ====================
+    START OF MAIN CONTENT SECTION
+    ==================== */
+
+/*HomePage style*/
+
+/*Main Content*/
+
+/*blur Animation*/
+.autoBlur {
+    animation: autoBlurAnimationn linear both;
+    animation-timeline: view();
+}
+
+@keyframes autoBlurAnimationn {
+    0% {
+        filter: blur(40px);
+    }
+
+    40%,60% {
+        filter: blur(0px);
+        transform: translateY(0px);
+        opacity: 1;
+    }
+
+    100% {
+        filter: blur(40px);
+        transform: translateY(-200px);
+        opacity: 0;
+    }
+}
+
+
+/*AUTO DISLAY ANIMATION*/
+.autoDisplay {
+    animation: autoDisplay  both;
+    animation-timeline: view(70% 5%);
+}
+@keyframes autoDisplay {
+    from{
+        opacity: 0;
+        transform: translateY(-200px) scale(0.3);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+    }
+}
+
+/* slide in left animation*/
+.revealing {
+    animation: revealing;
+    animation-timeline: view(block);
+    animation-range: cover 0% cover 50%;
+}
+
+@keyframes revealing {
+    from {
+      color: gray;
+      margin-left: 30vw;
+      filter: blur(50px);
+      opacity: 0.5;
+    }
+    to {
+      margin: 0px;
+      filter: blur(0px);
+      opacity: 1;
+    }
+}
+
+/*Fade in Animation*/
+
+.FadeIn {
+    animation: FadeIn 4s ease-in;
+}
+
+@keyframes FadeIn {
+    0% {
+        opacity: 0;
+    }
+    50%{
+        opacity: 0.3
+    }
+    100% {
+        opacity: 1;
+    }
+}
+  
+
+main {
+    height: 100vh;
+}
+
+.nameContainer{
+    height: 100vh;
+    width: 100%;
+    overflow: hidden
+}
+
+/*Main Content Background*/
+.nameVid {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+.nameVideo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.name .nam h2{
+    padding: 15px;
+    color: white;
+    font-size: 70px;
+    font-weight: none;
+    font-family: 'Panchang';
+    font-weight: 900;
+    text-transform: uppercase;
+    width: 100%;
+    z-index: 10;
+}
+
+/*Positioning the name*/
+.first{
+    position: absolute;
+    top: 15%;
+    left: 6%;
+    z-index: 10;
+
+}
+
+.second{
+    position: absolute;
+    top: 29%;
+    left: 8.6%;
+    z-index: 10;
+
+}
+
+.third{
+    position: absolute;
+    top: 41%;
+    left: 6%;
+    z-index: 10;
+
+}
+
+.fourth{
+    position: absolute;
+    top: 54%;
+    left: 8.6%;
+    z-index: 10;
+
+}
+
+/* ====================
+    END OF MAIN CONTENT SECTION
+    ==================== */
+
+/* ====================
+    START OF GLITCH EFFECT SECTION
+    ==================== */
+
+/*Glitch Effect of Main Content*/
+.glitch {
+    position: relative;
+    color: white;
+    font-family: 'Panchang';
+    font-size: 70px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.6s forwards;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+    color: white;
+    clip: rect(0, 0, 0, 0);
+    pointer-events: none;
+}
+
+.glitch:hover {
+    font-family: 'Pixelify';
+    font-size: 85px;
+    letter-spacing: 18px;
+    color: #f0f0f0;
+    width: 100%;
+}
+
+.glitch:hover::before {
+    animation: glitchTop 0.5s infinite linear;
+    color: #f0f;
+}
+
+.glitch:hover::after {
+    animation: glitchBottom 0.5s infinite linear;
+    color: #0ff;
+}
+
+@keyframes glitchTop {
+    0% {
+        clip: rect(0, 9999px, 0, 0);
+        transform: translate(-2px, -2px);
+    }
+    25% {
+        clip: rect(10px, 9999px, 20px, 0);
+        transform: translate(2px, -1px);
+    }
+    50% {
+        clip: rect(5px, 9999px, 15px, 0);
+        transform: translate(-1px, 2px);
+    }
+    75% {
+        clip: rect(15px, 9999px, 25px, 0);
+        transform: translate(1px, -2px);
+    }
+    100% {
+        clip: rect(0, 9999px, 0, 0);
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes glitchBottom {
+    0% {
+        clip: rect(0, 9999px, 0, 0);
+        transform: translate(2px, 2px);
+    }
+    25% {
+        clip: rect(20px, 9999px, 30px, 0);
+        transform: translate(-2px, 1px);
+    }
+    50% {
+        clip: rect(10px, 9999px, 25px, 0);
+        transform: translate(1px, -2px);
+    }
+    75% {
+        clip: rect(0, 9999px, 10px, 0);
+        transform: translate(-1px, 2px);
+    }
+    100% {
+        clip: rect(0, 9999px, 0, 0);
+        transform: translate(0, 0);
+    }
+}
+
+/* ====================
+    END OF GLITCH EFFECT SECTION
+    ==================== */
+
+/* ====================
+    START OF MAIN ARTICLE SECTION
+    ==================== */
+
+/*Main Article*/
+.mainArticle article {
+    position: relative;
+    left: 5%;
+    top: 10%;
+    width: 90%;
+}
+
+.mainArticle article p{
+    font-size: 23px;
+    padding: 10px;
+    color: white;
+    font-family: 'Panchang';
+    font-weight: 100;
+    width: 89%;
+    text-transform: capitalize;
+}
+
+.mainArticle article p span{
+    color: green;
+    font-family: 'Pramukh';
+    text-transform: uppercase;
+    font-size: 28px;
+    padding: 2px;
+    text-shadow: #03A63C 1px 0 10px;
+}
+
+/* ====================
+    END OF MAIN ARTICLE SECTION
+    ==================== */
+
+/* ====================
+    START OF SIDE SOCIAL MEDIA SECTION
+    ==================== */
+
+/*Side Social Media*/
+
+.sideBox {
+    border: 1px solid black;
+    border-radius: 30px;
+    background-color: grey;
+    width: 50px;
+    padding: 20px;
+    opacity: 0.3;
+    position: fixed;
+    top: 20%;
+    left: -40px;
+    height: 210px;
+    cursor: pointer;
+    z-index: 20;
+}
+
+.sideBox:hover {
+    opacity: 1;
+    transition: 0.5s;
+}
+
+/*Sidbar socail media Container*/
+.sideBox .socialContainer {
+    display: grid;
+    padding:  5px;
+    position: fixed;
+    top: 22%;
+    left: -1px;
+}
+
+.sideBox .socialContainer a{
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+    padding: 6px;
+    border-radius: 40px;
+    width: 28px;
+    height: 30px;
+    text-transform: capitalize;
+}
+
+.sideBox .socialContainer .fa-facebook {
+    border-radius: 1px;
+}
+
+.sideBox .socialContainer .fa-linkedin{
+    border-radius: 1px;
+}
+
+/*Side Social Media Hover Icons*/
+.fa-facebook:hover {
+    background-color: #4267B2;
+    color: white;
+    cursor: pointer;
+}
+
+.fa-twitter:hover{
+    background-color: #000000;
+    color: white;
+    cursor: pointer;
+}
+
+.fa-instagram:hover{
+    background: linear-gradient(to right,#833ab4,#fd1d1d,#fcb045);
+    color: white;
+    cursor: pointer;
+}
+
+.fa-linkedin:hover{
+    background-color:  #0a66c2;
+    color: white;
+    cursor: pointer;
+}
+
+
+/*Social Media span Hover Bar Icons*/
+.socialContainer a span{
+    position: relative;
+    bottom: 5px;
+    left: 80%;
+    transform: translateX(-50%) translateY(10px);
+    background: inherit;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-family: 'Panchang';
+    font-weight: 100;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
+}
+
+.socialContainer a:hover {
+    transform: scale(1.1);
+}
+
+/* ====================
+    END OF SIDE SOCIAL MEDIA SECTION
+    ==================== */
+
+/* ====================
+    START OF PROJECTS SECTION
+    ==================== */
+
+/*Project Header*/
+.projectContainer{
+    height: 100vh;
+    width: 100%;
+}
+.projectHeader{
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+
+.projectHeader div {
+    height: 240px;
+    padding: 10px;
+    color: white;
+    position: relative;
+    left: 2%;
+    bottom: -90px;
+}
+
+.projectHeader div h2 {
+    padding: 8px;
+    font-size: 50px;
+    font-family: 'Panchang';
+    font-weight: 100;
+    text-transform: capitalize;
+    color: white;
+    border: 1px solid black;
+    border-radius: 15px;
+    border: none;
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+	box-shadow: 0 15px 15px rgba(0, 0, 0, 0.3);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+    transition: 0.5s;
+	backdrop-filter: blur(15px);
+    width: 30%;
+    cursor: pointer;
+}
+
+.projectHeader div h2:hover {
+    transform: scale(1.05);
+}
+
+/* Animate borders */
+.projectHeader div h2::before,
+.projectHeader div h2::after,
+.projectHeader div h2 span::before,
+.projectHeader div h2 span::after {
+    content: '';
+    position: absolute;
+    background: white;
+    box-shadow: 0 0 10px white, 0 0 20px white;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+/* Top border */
+.projectHeader div h2::before {
+    height: 2px;
+    width: 0;
+    top: 0;
+    left: 0;
+}
+
+/* Right border */
+.projectHeader div h2::after {
+    width: 2px;
+    height: 0;
+    top: 0;
+    right: 0;
+}
+
+/* Bottom border */
+.projectHeader div h2 span::before {
+    height: 2px;
+    width: 0;
+    bottom: 0;
+    right: 0;
+}
+
+/* Left border */
+.projectHeader div h2 span::after {
+    width: 2px;
+    height: 0;
+    bottom: 0;
+    left: 0;
+}
+
+/* Trigger animation on hover */
+.projectHeader div h2:hover::before {
+    animation: drawTop 0.4s forwards;
+    opacity: 1;
+}
+.projectHeader div h2:hover::after {
+    animation: drawRight 0.4s forwards;
+    animation-delay: 0.3s;
+    opacity: 1;
+}
+.projectHeader div h2:hover span::before {
+    animation: drawBottom 0.4s forwards;
+    animation-delay: 0.6s;
+    opacity: 1;
+}
+.projectHeader div h2:hover span::after {
+    animation: drawLeft 0.4s forwards;
+    animation-delay: 0.9s;
+    opacity: 1;
+}
+
+/* Create the span in CSS */
+.projectHeader div h2::after,
+.projectHeader div h2::before {
+    z-index: 2;
+}
+.projectHeader div h2 span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 2;
+    border-radius: 15px;
+}
+
+/* Keyframes */
+@keyframes drawTop {
+    to { width: 100%; }
+}
+@keyframes drawRight {
+    to { height: 100%; }
+}
+@keyframes drawBottom {
+    to { width: 100%; }
+}
+@keyframes drawLeft {
+    to { height: 100%; }
+}
+
+/*Carousel Project Container*/
+
+.projectsContainer {
+    position: relative;
+    top: 100px;
+    width: 100%;
+    height: 290px;
+    overflow: hidden;
+}
+
+/*Carousel inner container with hover effect*/
+
+.innerContainer {
+    display: flex;
+    gap: 2%;
+    width: 100%;
+    overflow: hidden;
+    padding: 20px;
+    animation: scroll 48s linear infinite;
+    width: max-content;
+}
+
+.projectsContainer:hover .innerContainer {
+    animation-play-state: paused; /* Pause when container is hovered */
+}
+
+/*Project Inner Container*/
+  
+.projectInner {
+    height: 250px;
+    width: 280px;
+    flex-shrink: 0;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.3);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10%;
+    transition: transform 0.5s ease;
+    cursor: pointer;
+    padding: 0;
+}
+
+.projectInner:hover {
+    transform: scale(1.1);
+    border-radius: 10%;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Carousel Animation and Key Frames */
+
+@keyframes scroll {
+	0% { transform: translateX(0); }
+	100% { transform: translateX(calc(-250px * 8))}
+}
+
+&::before,
+&::after {
+	content: "";
+	height: 100px;
+	position: absolute;
+	width: 200px;
+	z-index: 2;
+}
+	
+&::after {
+	right: 0;
+	top: 0;
+	transform: rotateZ(180deg);
+}
+
+&::before {
+	left: 0;
+	top: 0;
+}
+/*Img Project Style*/
+
+.imgContainer {
+    padding: 0;
+}
+
+.imgContent {
+    object-fit: cover;
+    background-size: cover; /* Ensures the image covers the entire box */
+    background-position: center; /* Centers the image in the box */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    height: 160px;
+    width: 100%;
+    border-top-right-radius: 10%;
+    border-top-left-radius: 10%;
+}
+
+.slatt-img {background-image: url("../homepage assets/projects/image.png");}
+.saints-img {background-image: url("../homepage assets/projects/AllSaints.png");}
+.prima-img {background-image: url("../homepage assets/projects/Prima.png");}
+.trim-img {background-image: url("../homepage assets/projects/Trim.png");}
+.sevi-img {background-image: url("../homepage assets/projects/Sevi.png");}
+/*.imgContent:nth-child(6){}
+.imgContent:nth-child(7){}
+.imgContent:last-child{}*/
+
+/*Inner Text Project Style*/ 
+
+.projectWriteUp {
+    display: flex;
+    justify-content: center;
+    gap: 24%;
+    text-transform: capitalize;
+    font-family: 'Pachang';
+    font-size: 15px;
+    color: white;
+    font-weight: 50;
+    height: 37.5px;
+    padding: 0 4px 0 4px;
+}
+
+.projectExpand {
+    font-size: 12px;
+    gap: 4%;
+}
+
+.projectExpand p:hover{
+    text-decoration: underline;
+    transition: 0.5s ease;
+}
+
+.projectExpand span{
+    border: 1px solid white;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+/*Inner Project Paragraph Style*/
+
+.projectDescription {
+    font-size: 9.5px;
+    color: white;
+    font-family: 'Panchang';
+    font-weight: 100;
+    text-transform: capitalize;
+    padding: 4px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+/*Project Inner  style*/
+
+.projectsContainer .projectInner:nth-child(6){
+    background-color: orange;
+}
+.projectsContainer .projectInner:nth-child(7){
+    background-color: #0ff;
+}
+.projectsContainer .projectInner:last-child{
+    background-color: #f0f;
+}
+
+/* ====================
+    END OF PROJECTS SECTION
+    ==================== */
+
+/* ====================
+    START OF SKILLS SECTION
+    ==================== */
+
+/*Skill Container style*/
+.skillsFlex {
+    display: flex;
+    justify-content: center;
+    gap: 4%;
+    padding: 5px;
+    position: relative;
+}
+
+.skillsContainer {
+    font-size: 26px;
+    color: white;
+    font-family: 'Panchang';
+    font-weight: 100;
+    text-transform: capitalize;
+    padding: 60px 0 0 0;
+}
+
+/*Skill reflection style*/
+.skillsContainer .reflection {
+    opacity: 0.3;
+    margin-top: 2px;
+    filter: blur(0.5px);
+    line-height: 1;
+    mask-image: linear-gradient(
+        to bottom, rgb(217, 211, 211), 
+        transparent);
+    -webkit-mask-image: linear-gradient(
+        to bottom, rgb(217, 211, 211), 
+        transparent);
+}
+
+
+/*specific skill reflection style*/
+
+.skillsContainer .mask {
+    transform: 
+        rotateX(180deg) 
+        translate(10px, 10px);
+    position: relative;
+    bottom: 31px;
+    left: 4%;
+    pointer-events: none;
+}
+
+/*Skiil hover i style*/
+
+.skillsContainer span i {
+    position: relative;
+    bottom: 35px;
+    left: -55%;
+    transition: 0.5s ease-in-out;
+}
+
+/*html icon style*/
+
+.skillsContainer span .fa-html5 {
+    position: relative;
+    bottom: 30px;
+    left: 24%;
+}
+
+/*css icon style*/
+
+.skillsContainer span .fa-css3 {
+    position: relative;
+    bottom: 30px;
+    left: -17%;
+}
+
+/*flutter icon style*/
+
+.skillsContainer span .L {
+    position: relative;
+    bottom: 30px;
+    left: 25%;
+}
+
+/*dart icon style*/
+
+.skillsContainer span .A {
+    position: relative;
+    bottom: 30px;
+    left: -20%;
+}
+
+
+/*Skill Icon Style*/
+.skillsContainer .h:hover { color: #f06529; cursor: pointer;}
+.skillsContainer .c:hover { color: #2965f1; cursor: pointer;}
+.skillsContainer .js:hover { color: #f0db4f; cursor: pointer;}
+.skillsContainer .pi:hover { color: #4B8BBE; cursor: pointer;}
+.skillsContainer .fl:hover { color: #042B59; cursor: pointer;}
+.skillsContainer .d:hover { color: #0075BA; cursor: pointer;}
+.skillsContainer .s:hover { color: #F05138; cursor: pointer;}
+
+/* ====================
+    END OF SKILLS SECTION
+    ==================== */
+
+/* ====================
+    START OF CONTACT SECTION
+    ==================== */
+
+/*Contact Container*/ 
+.contactContainer {
+    display: block;
+    justify-content: center;
+    padding: 10px;
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+    bottom: -10px;
+}
+
+.contactContainer div {
+    position: relative;
+    padding: 20px;
+    left: 27%;
+}
+
+/*contact container button style*/
+.contactContainer div button {
+    position: relative;
+    left: -28.5%;
+    padding: 15px;
+    font-size: 25px;
+    font-family: 'Pachang';
+    font-weight: 100;
+    border-radius: 30px;
+    cursor: pointer;
+    border: none;
+    display: grid;
+    align-items: center;
+    place-self: center;
+    grid-gap: 0.5em;
+    grid-template-columns: calc(0.375em + var(--hov, 0) * 1em) 1fr;
+    transition: 
+        grid-template-columns 0.3s ease-out,
+        background-color 0.3s ease-out;
+}
+
+/* pseudo-element must be tied to the element */
+.contactContainer div button::before {
+    content: attr(data-ico);
+    aspect-ratio: 1;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: #0e0a0e;
+    color: hsla(0, 0%, 100%, var(--hov, 0));
+    font-weight: 100;
+    text-indent: calc((var(--hov, 0) - 1) * 1em);
+    clip-path: circle(closest-side);
+    transition: 
+        color 0.5s ease-out,
+        text-indent 0.5s ease-out;
+}
+
+/* Set hover variable and allow animations to kick in */
+.contactContainer div button:hover,
+.contactContainer div button:focus {
+    --hov: 1;
+}
+
+/*contact span style*/
+.contactContainer div span {
+    font-size: 30px;
+    font-family: 'Panchang';
+    text-align: center;
+    font-weight: 100;
+    text-transform: capitalize;
+    color: white;
+}
+
+/* Show span on hover */
+.socialContainer a:hover span {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-10px);
+}
+
+/* ====================
+    END OF CONTACT SECTION
+    ==================== */
+
+/* ====================
+    START OF BOOKING SECTION
+    ==================== */
+
+/*Booking Container Style*/
+.bookingContainer {
+    display: none;
+    position: fixed;
+    padding: 20px;
+    top: 12%;
+    left: 32%;
+    border: 1px solid white;
+    border-radius: 30px;
+    height: 350px;
+    width: 400px;
+    z-index: 400;
+    background: #f2f2f2;
+}
+
+.bookingContainer form .bookContainer{
+    justify-content: center;
+    height: 220px;
+    width: 100%;
+}
+
+/*Booking Input field style*/
+
+/*Email and Name input field*/
+.bookFlex {
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+    padding: 10px 0;
+}
+.bookFlex input:first-child,
+.bookFlex input:last-child
+{
+    padding: 10px;
+    width: 50%;
+    border-radius: 50px;
+    border: none;
+}
+
+/*Textarea and submit button*/
+.bookGrid {
+    display: grid;
+    justify-content: center;
+    height: 192px;
+    width: 100%;
+}
+
+.bookGrid textarea {
+    padding: 10px;
+    width: 392px;
+    height: 92px;
+    border-radius: 10px;
+    resize: none;
+    border: none;
+    pointer-events: all;
+}
+
+.bookGrid #submit {
+    position: relative;
+    top: 10px;
+    left: 25%;
+    height: 30px;
+    border-radius: 50px;
+    font-size: 15px;
+    cursor: pointer;
+    width: 50%;
+}
+
+
+/*Booking Header style*/
+.bookingContainer form h2 {
+    position: relative;
+    left: -13%;
+    font: 30px 'Panchang';
+    color: black;
+    text-align: center;
+    text-transform: capitalize;
+    font-weight: 100;
+    padding: 10px;
+}
+
+/*Booking Expand and close button style*/
+.bookingContainer .closeX {
+    position: absolute;
+    top: -4%;
+    right: 4%;
+    padding: 10px;
+    font-size: 20px;
+    color: black;
+    cursor: pointer;
+    opacity: 0.3;
+}
+
+.bookingContainer .exp {
+    position: absolute;
+    top: 3%;
+    right: 9%;
+    padding: 10px;
+    font-size: 15px;
+    color: black;
+    cursor: pointer;
+    opacity: 0.3;
+}
+
+/*Hover effect Style*/
+.bookingContainer .exp:hover {
+    opacity: 1;
+    transition: 0.5s;
+}
+.bookingContainer .closeX:hover {
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.bookingSuccess {
+    display: none;
+    position: fixed;
+    padding: 20px;
+    top: 29%;
+    left: 39%;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 30px;
+    height: 30px;
+    width: 220px;
+    z-index: 500;
+    background: #f2f2f2;
+    color: #03A63C;
+}
+
+/* ====================
+    END OF BOOKING SECTION
+    ==================== */
+
+/* ====================
+    START OF OVERLAY SECTION
+    ==================== */
+
+/*Overlay Style*/
+.overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 300; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+}
+
+/* ====================
+    END OF OVERLAY SECTION
+    ==================== */
+
+/* ====================
+    START OF ARROW SCROLL SECTION
+    ==================== */
+
+/*Arrow Scroll to the Top Style*/
+
+.arrowSection {
+    overflow: hidden;
+}
+
+.arrowContainer {
+    padding: 5px;
+    position: fixed;
+    left: 87%;
+    bottom: 50px;
+    width: 10%;
+    height: 150px;
+}
+
+/* Arrow Core */
+.arrow {
+    width: 6vmin;
+    height: 6vmin;
+    box-sizing: border-box;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: rotate(-45deg);
+    cursor: pointer;
+}
+
+/* Arrow Parts */
+.arrow::before,
+.arrow::after {
+    content: '';
+    position: absolute;
+    top: -70%;
+    left: -2%;
+    width: 100%;
+    height: 100%;
+    border-style: solid;
+    border-color: #fafafa;
+    transition: 0.2s ease;
+    display: block;
+    transform-origin: 100% 0;
+}
+
+.arrow::before {
+    border-width: 0.8vmin 0.8vmin 0 0;
+}
+
+.arrow::after {
+    border-width: 0 0.8vmin 0 0;
+    top: -62%;
+}
+
+/* Hover Effects */
+.arrow:hover::before {
+    border-color: purple;
+    transform: scale(0.8);
+}
+
+.arrow:hover::after {
+    transform: rotate(45deg);
+    border-color: purple;
+    height: 120%;
+    left: 6%;
+    top: -70.5%;
+}
+
+/* ====================
+    END OF ARROW SCROLL SECTION
+    ==================== */
+
+/* ====================
+    START OF CONTACT PAGE SECTION
+    ==================== */
+
+/*Contact Css Style*/
+
+.contactSectionCentre {
+    text-align: center;
+    align-items: center;
+}
+
+/*Header Style*/
+.Contactheader {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    align-items: center;
+}
+.Contactheader h1 {
+    position: relative;
+    top: 45%;
+    font: 38px 'Panchang';
+    color: white;
+    font-weight: 100;
+    text-transform: capitalize;
+}
+
+/*reflections*/
+.reflections {
+    opacity: 0.3;
+    transform: rotateX(180deg) translateY(15px);
+    mask-image: linear-gradient(
+        to bottom, rgba(255,255,255,0.4), 
+        transparent
+    );
+    -webkit-mask-image: linear-gradient(
+        to bottom, rgba(255,255,255,0.4), 
+        transparent
+    );
+}
+
+.Contactheader .reflect {
+    position: relative;
+    top: 43%;
+    pointer-events: none;
+}
+
+.Contactheader .one {
+    font: 38px 'Panchang';
+    text-transform: capitalize;
+    color: white;
+    font-weight: 100;
+    position: relative;
+    bottom: 20px;
+    margin-top: 2px;
+    filter: blur(0.1px);
+    line-height: 1;
+}
+
+.Contactheader .bottomHeader {
+    position: relative;
+    top: 45%;
+}
+
+.Contactheader p {
+    color: white;
+    font: 15px 'Panchang';
+    opacity: 0.4;
+}
+
+/*Bottom Container style*/
+
+.contactFlexContainer {
+    display: flex;
+    justify-content: center;
+    gap: 15%;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+/*Left Side of flex box*/
+.gridContactContainer {
+    display: grid;
+    padding: 10px;
+    gap: 6%;
+    height: 300px;
+}
+
+.contactInnerFlex {
+    border: 1px solid transparent;
+    padding: 5px;
+    width: 450px;
+    display: flex;
+    border-radius: 20px;
+    transition: 0.5s ease-in;
+}
+
+.contactInnerFlex:hover {
+    border: 1px solid #EEEEEC;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.422);
+    cursor: pointer;
+}
+
+/*Icon and text style*/
+.contactIcon {
+    height: 100px;
+    width: 100px;
+    font-size: 36px;
+    color: white;
+}
+
+.contactIcon i {
+    position: relative;
+    top: 26%;
+    left: -8%;
+}
+
+/*text style*/
+.contactText {
+    padding: 10px;
+}
+.LocH {
+    position: relative;
+    left: -30%;
+}
+
+.EmailH {
+    position: relative;
+    left: -30%;
+}
+
+.contactText h2 {
+    margin: 4px;
+    color: white;
+    text-transform: capitalize;
+    font: 18px 'Panchang';
+    padding: 0;
+}
+
+.contactText p {
+    color:  white;
+    opacity: 0.3;
+    position: relative;
+    left: 7px;
+    font: 11px 'Panchang';
+}
+
+.contactText .numberC {
+    position: relative;
+    left: -20%;
+}
+
+.contactText p a {
+    color: white;
+    opacity: 0.5;
+    text-decoration: none;
+}
+
+.contactText p a:hover{
+    color: #a63fea;
+}
+
+.contactText .numberC:hover {
+    color: #a63fea;
+    cursor: pointer;
+}
+
+/*Image Contact */
+.contactImgContainer {
+    height: 90vh;
+    width: 500px;
+}
+
+.contactImgContainer div {
+    height: 100%;
+    width: 100%;
+}
+
+.contactImgContainer div img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/*form style*/
+
+.formContainer {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    gap: 3%;
+}
+
+/*Experience Style*/
+
+.formExp {
+    display: flex;
+    justify-content: center;
+    gap: 2%;
+    position: relative;
+    top: 65%;
+    left: 0;
+}
+
+.formExp div {
+    width: 250px;
+    position: relative;
+    left: -25%;
+}
+
+.formExp div p {
+    font: 70px 'Panchang';
+    padding: 0;
+    font-weight: 400;
+}
+
+.formExp div p span {
+    font-size: 30px;
+    color: rgb(205, 52, 205);
+}
+
+.formExp div h2 {
+    position: relative;
+    top: -13%;
+    text-transform: capitalize;
+    font: 15px 'Panchang';
+}
+
+
+/*Form*/
+
+.fillForm {
+    padding: 10px;
+}
+
+.fillForm form {
+    padding: 10px;
+    position: absolute;
+    top: 208%;
+    left: 64%;
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 30px;
+    width: 400px;
+    height: 470px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.422);
+}
+/*form name and email style*/
+
+.formFlex {
+    display: grid;
+    gap: 5%;
+    padding: 10px;
+}
+
+.formFlex div {
+    display: grid;
+    gap: 1%;
+}
+
+.formFlex div label {
+    color: white;
+    font-size: 20px;
+    font-family: 'Panchang';
+    font-weight: 100;
+    text-transform: capitalize;
+    position: relative;
+    left: -37%;
+}
+
+.formFlex div input {
+    padding: 10px;
+    width: 90%;
+    border-radius: 20px;
+    border: none;
+}
+
+/*form message and subject style*/
+
+.formGrid {
+    display: grid;
+    gap: 3%;
+    padding: 5px;
+}
+
+.formGrid div {
+    display: grid;
+    gap: 4%;
+    padding: 10px;
+    text-align: justify;
+}
+
+.formGrid div label {
+    color: white;
+    font-size: 20px;
+    font-family: 'Panchang';
+    font-weight: 100;
+    text-transform: capitalize;
+    position: relative;
+    left: 0%;
+}
+
+/*input and textarea style*/
+
+.formGrid div textarea {
+    padding: 10px;
+    width: 100%;
+    border-radius: 20px;
+    resize: none;
+    height: 100px;
+    width: 350px;
+    border: none;
+}
+
+.formGrid div input {
+    padding: 10px;
+    width: 90%;
+    border-radius: 20px;
+    border: none;
+}
+
+/*form button style*/
+.submit {
+    padding: 10px;
+    width: 60%;
+    border: 1px solid gray;
+    background-color: #0f1217;
+    border-radius: 20px;
+    box-shadow:  0 0 5px purple;
+    color: white;
+    text-shadow:  purple 1px 0 10px;
+    font-size: 20px;
+    font-family: 'Panchang';
+    font-weight: 100;
+    cursor: pointer;
+    position: relative;
+    bottom: -8px;
+    left: 2%;
+    transition: 0.5 ease-in;
+}
+
+.submit:hover {
+    color: purple;
+    opacity: 0.7;
+    text-shadow:  purple 1px 0 10px;
+    box-shadow:  0 0 15px purple;
+    transition: 0.5 ease-in;
+}
+
+/* ====================
+    END OF CONTACT PAGE SECTION
+    ==================== */
+
+/* ====================
+    START OF PORTFOLIO SECTION
+    ==================== */
+
+/*PORTFOLIO CSS*/
+
+/*portfoltio Header*/
+
+.PortfolioBox {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.portfolioHeader {
+    height: 60vh;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.portfolioHeader div {
+    position: relative;
+    top: 72%;
+}
+
+.portfolioHeader div h2 {
+    font: 60px 'Panchang';
+    font-weight: 100;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+}
+
+.two {
+    position: relative;
+    bottom: 80px;
+    transform: rotateX(180deg);
+}
+
+/*project Container*/
+
+/* Container */
+.portfolioContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15vh;
+    background: black;
+    padding-top: 40px;
+}
+
+/* Cards */
+.borderPortfolio {
+    position: sticky;
+    top: 10%;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    left: 5%;
+    height: 80vh;
+    width: 85%;
+    border-radius: 50px;
+    background: black;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.borderPortfolio:hover {
+    transform: scale(1.01);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.47);
+    transition: 0.3s ease-in-out;
+}
+
+/* Image */
+.portfolioImage {
+    flex: 2;
+    height: 100%;
+    overflow: hidden;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.portfolioImage img {
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+}
+
+/* Info Section */
+.portfolioInfo {
+    flex: 1;
+    padding: 30px;
+    color: white;
+}
+
+/* Top Right Buttons */
+.portfolioInfo .topRight {
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+    margin-bottom: 39px;
+}
+
+.topRight a {
+    border: 1px solid white;
+    border-radius: 30px;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-family: 'Iceberg';
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+    text-transform: capitalize;
+    transition: 0.3s ease-in-out;
+}
+
+.topRight a:hover {
+    background: purple;
+    color: white;
+}
+
+/* Bottom Left Text */
+.bottomLeft h2 {
+    font: 25px 'Panchang';
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+.bottomLeft p {
+    font-size: 16px;
+    text-align: left;
+}
+
+.bottomSpan {
+    display: flex;
+    font-size: 25px;
+    padding: 5px;
+    gap: 5%;
+    cursor: pointer;
+}
+
+.bottomSpan a {
+    color: white;
+    text-decoration: none;
+}
+
+/* ====================
+    END OF PORTFOLIO SECTION
+    ==================== */
+
+/* ====================
+    START OF FOOTER SECTION
+    ==================== */
+
+.Footer {
+    position: relative;
+    height: 30px;
+    opacity: 0.3;
+    width: 100%;
+    overflow: hidden;
+    align-items: center;
+    text-align: center;
+}
+
+.Footer span {
+    text-transform: capitalize;
+}
+
+/* ====================
+    END OF FOOTER SECTION
+    ==================== */
+
+/* ====================
+    START OF SERVICES STYLES
+    ==================== */
+
+/*Services Container*/
+.serviceContainer {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    align-items: center;
+}
+
+/*Service Header*/
+.serviceHeader {
+    width: 100%;
+    text-align: center;
+}
+
+.serviceHeader div h2 {
+    position: relative;
+    top: 55px;
+    font: 45px 'Panchang';
+    font-weight: 100;
+    text-transform: capitalize;
+}
+
+/*Service flex Template*/
+.serviceBox {
+    width: 100%;
+    height: 218px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* ==========
+    Preview Box
+    ========== */
+.previewLayout {
+    position: relative;
+    top: 30px;
+    left: 1.5%;
+    height: 70%;
+    width: 98%;
+    border: 1px solid white;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.previewLayout .innerPreview {
+    height: 100%;
+    width: 100%;
+}
+
+.preview {
+    overflow: auto;
+    height: 100%;
+    width: 100%;
+}
+
+/* ===========
+    Preview One Box
+    ========== */
+
+/*Layout One*/
+.Myfirst {
+    background-color: #f2fef2;
+    color: black;
+}
+
+.prOneBck {
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    clip-path: polygon(0 0, 100% 0, 48% 52%, 0% 100%);
+}
+
+/*Nav One*/
+.previewOneNav {
+    display: flex;
+    justify-content: center;
+    gap: 18%;
+}
+
+/*Nav One Logo*/
+.prOneLogo {
+    position: relative;
+    top: 10px;
+    left: -20%;
+    font-size: 12px;
+    font-family: 'Panchang';
+    font-weight: 100;
+    text-transform: capitalize;
+    z-index: 10;
+    cursor: pointer;
+}
+
+/*Nav Ul*/
+
+.previewOneNav nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+    padding: 0;
+}
+
+.previewOneNav nav ul li {
+    color: white;
+    list-style: none;
+    cursor: pointer;
+    padding: 5px;
+    transition: 0.5s ease-in-out;
+}
+
+.previewOneNav nav ul li:hover {
+    color: rgb(246, 255, 0);
+    text-shadow:  0 10px 10px rgba(255, 255, 255, 0.422);
+}
+
+/*Header*/
+.previewOneHeader {
+    height: 80vh;
+    width: 100%;
+    text-align: center;
+}
+
+.previewOneHeader h2 {
+    position: relative;
+    top: 85px;
+    font: 50px 'Panchang';
+    font-weight: 100;
+    text-transform: capitalize;
+    color: rgb(246, 255, 0);
+    z-index: 10;
+}
+
+/*Images and Booking Section*/
+.previewOnePictures {
+    height: 100vh;
+    width: 100%;
+}
+
+.previewOnePic {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 5%;
+    z-index: 5;
+}
+
+/*Layout of firstDiv secondDIV ETC*/
+.previewOnePic .firstDiv {
+    display: grid;
+    gap: 5%;
+}
+
+.previewOnePic .secondDiv {
+    display: grid;
+    gap: 5%;
+}
+
+.previewOnePic .secondDiv .tp, .mdd, .btm {
+    display: flex;
+    gap: 5%;
+}
+
+
+.previewOnePic .firstDiv div {
+    height: 300px;
+    width: 240px;
+    z-index: 10;
+    transition: 0.5s ease-in-out;
+}
+
+.previewOnePic .secondDiv .tp .hover-video {
+    position: relative;
+    height: 300px;
+    width: 400px;
+    z-index: 10;
+    transition: 0.5s ease-in-out;
+    overflow: hidden;
+}
+
+.previewOnePic .secondDiv .mdd div {
+    height: 300px;
+    width: 240px;
+    z-index: 10;
+    transition: 0.5s ease-in-out;
+}
+.previewOnePic .secondDiv .btm div {
+    height: 300px;
+    width: 240px;
+    overflow: hidden;
+    border-radius: 200px;
+    z-index: 10;
+    transition: 0.5s ease-in-out;
+}
+
+.previewOnePic .firstDiv div:hover,
+.previewOnePic .secondDiv .tp div:hover,
+.previewOnePic .secondDiv .mdd div:hover,
+.previewOnePic .secondDiv .btm div:hover {
+    transform: scale(1.1);
+}
+
+/*Inner First Div*/
+
+.firstDiv div img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transform: scale(0.8);
+    opacity: 0.5;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    will-change: transform, opacity;
+}
+
+.firstDiv div article {
+    position: relative;
+    left: 7%;
+    top: -70px;
+    background: orange;
+    width: 80%;
+    border-radius: 20px;
+    text-align: center;
+    cursor: pointer;
+    transform: scale(0.8);
+    opacity: 0.5;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    will-change: transform, opacity;
+}
+
+.firstDiv div article button {
+    border: none;
+    background-color: transparent;
+    padding: 5px;
+    color: red;
+    font: 20px 'Panchang';
+    cursor: pointer;
+}
+
+.firstDiv div article:hover {
+    box-shadow: 0 0 12px orange;
+}
+
+/*Inner Second top div */
+.hover-video img,
+.hover-video video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.4s ease;
+    cursor: pointer;
+    transform: scale(0.8);
+    opacity: 0.5;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    will-change: transform, opacity;
+}
+
+.hover-video video {
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.secondDiv .tp .hover-video article {
+    position: relative;
+    bottom: -220px;
+    background: linear-gradient(to bottom, black, transparent);
+    width: 100%;
+    text-align: justify;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+
+.secondDiv .tp .hover-video article p {
+    color: white;
+    font: 20px 'Panchang';
+    font-weight: 100;
+    padding: 10px;
+}
+
+/*Inner Third Layout*/
+.secondDiv .mdd div img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transform: scale(0.8);
+    opacity: 0.5;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    will-change: transform, opacity;
+}
+
+.secondDiv .mdd div article {
+    position: relative;
+    top: -75px;
+    background: linear-gradient(to bottom, black, transparent);
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+.secondDiv .mdd div article p{
+    font: 15px 'Panchang';
+    text-transform: capitalize;
+}
+
+/*inner Fourth Layout */
+.secondDiv .btm div img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transform: scale(0.8);
+    opacity: 0.5;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    will-change: transform, opacity;
+}
+
+.secondDiv .btm div article {
+    position: relative;
+    top: -75px;
+    background: linear-gradient(to bottom, black, transparent);
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+.secondDiv .btm div article p{
+    font: 15px 'Panchang';
+    text-transform: capitalize;
+}
+
+/* ===============
+    End of Preview One Layout 
+    ==============*/
+
+
+/* ===============
+    Start of Preview Two Layout 
+    ==============*/
+.Mysecond {
+    background-color: black;
+}
+
+.container {
+  max-width: 1050px;
+  width: 90%;
+  margin: auto;
+}
+
+.prTwobar {
+  width: 100%;
+  box-shadow: 0 1px 4px rgb(146 161 176 / 15%);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 62px;
+}
+
+.prTwobar .menu-items {
+  display: flex;
+}
+
+.prTwobar .nav-container li {
+  list-style: none;
+  
+}
+
+.prTwobar .nav-container a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding: 0.7rem;
+  z-index: 90;
+}
+
+.prTwobar .nav-container a:hover{
+    font-weight: bolder;
+}
+
+.nav-container {
+  display: block;
+  position: relative;
+  height: 60px;
+}
+
+.nav-container .checkbox {
+  position: absolute;
+  display: block;
+  height: 32px;
+  width: 32px;
+  top: 20px;
+  left: 20px;
+  z-index: 5;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.nav-container .hamburger-lines {
+  display: block;
+  height: 26px;
+  width: 32px;
+  position: absolute;
+  top: 17px;
+  left: 20px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.nav-container .hamburger-lines .line {
+  display: block;
+  height: 4px;
+  width: 100%;
+  border-radius: 10px;
+  background: white;
+}
+
+.nav-container .hamburger-lines .line1 {
+  transform-origin: 0% 0%;
+  transition: transform 0.4s ease-in-out;
+}
+
+.nav-container .hamburger-lines .line2 {
+  transition: transform 0.2s ease-in-out;
+}
+
+.nav-container .hamburger-lines .line3 {
+  transform-origin: 0% 100%;
+  transition: transform 0.4s ease-in-out;
+}
+
+.prTwobar .menu-items {
+  padding-top: 120px;
+  background-color: black;
+  box-shadow: inset 0 0 2000px rgb(20, 19, 19);
+  height: 100vh;
+  width: 100%;
+  transform: translate(-150%);
+  display: flex;
+  flex-direction: column;
+  margin-left: -40px;
+  padding-left: 50px;
+  transition: transform 0.5s ease-in-out;
+  text-align: center;
+}
+
+.prTwobar .menu-items li {
+  margin-bottom: 1.2rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  z-index: 90;
+}
+
+
+.nav-container input[type="checkbox"]:checked ~ .menu-items {
+  transform: translateX(0);
+  z-index: 20;
+}
+
+.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
+  transform: rotate(45deg);
+  z-index: 20;
+}
+
+.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
+  transform: scaleY(0);
+}
+
+.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
+  transform: rotate(-45deg);
+}
+
+.nav-container input[type="checkbox"]:checked ~ .logos{
+  display: none;
+}
+
+.prTwobar .logos {
+    height: 40px;
+    width: 40px;
+    border-radius: 50px;
+    position: relative;
+    left: 45%;
+    top: 15%;
+    transition: 0.5s ease-in-out;
+}
+
+.logos img {
+    height: 100%;
+    width: 100%; 
+    object-fit: cover;
+    border-radius: 50px;
+}
+
+.logos:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.LandingF {
+    height: 100vh;
+    width: 100%;
+}
+
+.heaCont H1 {
+    font: 55px 'Arial';
+    font-weight: 700;
+    background: linear-gradient(90deg, #cb1193, #fc257b, #c90032, #f519a4);
+    background-size: 300% 100%;
+    background-position: left center;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    position: relative;
+    top: 35px;
+    left: 5%;
+    width: 50%;
+    animation: gradientMove 5s linear infinite;
+    padding: 10px 0;
+}
+
+.heaCont p {
+    font: 25px 'Arial';
+    text-transform: capitalize;
+    opacity: 0.6;
+    position: relative;
+    top: -50px;
+    left: 5%;
+    width: 15%;
+    text-align: justify;
+}
+
+
+
+
+
+/* CSS */
+.buttonCont button {
+  margin: 10px;
+  padding: 15px 30px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 10px;
+  display: block;
+  border: 0px;
+  font-size: 35px;
+  font-weight: 700;
+  box-shadow: 0px 0px 14px -7px #f1f14b;
+  background-image: linear-gradient(45deg, #c8ed68fb 0%, #f3b258  51%, #e85032  100%);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  position: relative;
+  left: 38%;
+  top: -650px;
+  opacity: 0.1;
+  z-index: 30;
+}
+
+.buttonCont button:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+  opacity: 1;
+}
+
+.buttonCont button:hover ~ .heaCont,
+.buttonCont button:hover ~ .hpCont{
+    opacity: 0;
+}
+.buttonCont button:active {
+  transform: scale(0.95);
+}
+
+/*bottom Span Content*/
+.hpCont {
+    position: relative;
+    width: 50%;
+    left: 0;
+    top: -310px;
+    display: flex;
+    gap: 2%;
+    padding: 20px;
+}
+
+.hpCont span {
+    padding: 10px;
+    font: 16px 'Panchang';
+    text-transform: capitalize;
+    cursor: pointer;
+    z-index: 60;
+    position: relative;
+}
+
+/* LEFT border animation */
+.hpCont span::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 2px;
+    height: 0;
+    background-color: #3700ff;
+    transition: height 0.3s ease;
+}
+
+/* TOP border animation */
+.hpCont span::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #3700ff;
+    transition: width 0.3s ease 0.3s; /* delay so it starts after left */
+}
+
+.hpCont span:hover::before {
+    height: 100%; /* grows bottom to top */
+}
+
+.hpCont span:hover::after {
+    width: 100%; /* grows left to right */
+}
+
+/*hover img start*/
+.hover-img {
+    width: 45%;
+    position: relative;
+    top: -100px;
+    left: 42%;
+    z-index: 50;
+}
+.hover-img .glass {
+    border: 1px solid white;
+    height: 230px;
+    width: 220px;
+    overflow: hidden;
+    padding: 10px;
+    border-radius: 30px;
+}
+
+/*location of the divs*/
+.min {
+    position: relative;
+    top: -165px;
+    left: 80%;
+}
+.yin{
+    position: relative;
+    left: 70%;
+    top: -155px;
+}
+.lin{
+    position: relative;
+    left: 80%;
+    top: -140px;
+}
+
+.glass img {
+    height: 230px;
+    width: 220px;
+    object-position: center;
+    object-fit: cover;
+    border-radius: 30px;
+}
+
+.spline_container {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    top: -450px;
+    left: 0;
+}
+
+
+
+
+/* ===============
+    End of Preview Two Layout 
+    ==============*/
+
+
+
+
+
+/* ===============
+    Start of Preview Three Layout 
+    ==============*/
+
+/* ===============
+    End of Preview Three Layout 
+    ==============*/
+/* ===================
+    KeyFrames Animation and Animation
+    ===================*/
+
+@keyframes gradientMove {
+    0% {
+        background-position: left center;
+    }
+    100% {
+        background-position: right center;
+    }
+}
+
+.firstDiv div img.zoomed,
+.firstDiv div article.zoomed,
+.secondDiv .tp div img.zoomed,
+.secondDiv .tp div video.zoomed,
+.secondDiv .tp div article.zoomed,
+.secondDiv .mdd div img.zoomed,
+.secondDiv .mdd div article.zoomed,
+.secondDiv .btm div img.zoomed,
+.secondDiv .btm div article.zoomed {
+  transform: scale(1);
+  opacity: 1;
+}
+
+
+.preview.active-preview {
+    display: block;
+}
+
+
+
+
+
+/*Arrows*/
+.arrowContainer {
+    display: flex;
+    justify-content: center;
+    gap: 4%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.arrowContainer button:first-child,
+.arrowContainer button:last-child {
+    position: relative;
+    top: 60px;
+    left: 10%;
+    background: white;
+    filter: blur(3px);
+    height: 40px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    color: black;
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.3s ease-in;
+}
+
+.arrowContainer button:first-child:hover,
+.arrowContainer button:last-child:hover {
+    filter: blur(0);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.68);
+}
+
+/*Tempalate Container*/
+.templateContainer {
+    overflow: hidden;
+    position: relative;
+    top: 30px;
+    left: 40%;
+    height: 150px;
+    width: 30%; /* or something wide enough */
+    background-color: white;
+    border-bottom-left-radius: 50px;
+    border-top-left-radius: 50px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.422);
+    z-index: 100;
+}
+
+.tempInner {
+    width: max-content;
+    width: 100%;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    display: flex;
+    gap: 5%;
+    padding: 15px;
+}
+
+.tempInner div {
+    height: 120px;
+    min-width: 140px;
+    margin-right: 10px;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+.template.active {
+    border: 3px solid #f5f6f8;
+    box-shadow: 0 0 15px #eff3f755;
+}
+
+.glass-bg {
+    background: rgba(255, 255, 255, 0.377); /* semi-transparent */
+    border-radius: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0);
+    backdrop-filter: blur(10px); /* glass effect */
+    -webkit-backdrop-filter: blur(10px); /* for Safari */
+    border: 1px solid rgba(255, 255, 255, 0.575);
+}
+
+/* ====================
+    START OF MEDIA QUERIES
+    ==================== */
+
+/* Mobile (max-width: 600px) */
+@media (max-width: 600px) {
+    html, body {
+        font-size: 14px;
+    }
+    header {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 10px;
+    }
+    .logo {
+        font-size: 16px;
+        padding: 6px;
+    }
+    header nav ul {
+        flex-direction: column;
+        gap: 10px;
+        padding: 0;
+    }
+    .wel {
+        font-size: 28px;
+        left: 10%;
+        top: 30%;
+    }
+    .loader {
+        left: 15%;
+        width: 120px;
+    }
+    .mainArticle article p {
+        font-size: 16px;
+        width: 98%;
+    }
+    .name .nam h2,
+    .glitch {
+        font-size: 32px;
+    }
+    .projectHeader div h2 {
+        font-size: 28px;
+        width: 90%;
+    }
+    .projectsContainer {
+        height: 200px;
+    }
+    .projectInner {
+        width: 160px;
+        height: 120px;
+    }
+    .imgContent {
+        height: 70px;
+    }
+    .skillsContainer {
+        font-size: 16px;
+        padding: 20px 0 0 0;
+    }
+    .contactContainer div {
+        left: 0;
+        padding: 10px;
+    }
+    .bookingContainer {
+        width: 95vw;
+        left: 2.5vw;
+        padding: 10px;
+        height: auto;
+    }
+    .bookingContainer form h2 {
+        left: 0;
+        font-size: 20px;
+    }
+    .arrowContainer {
+        left: 80%;
+        width: 18%;
+        height: 80px;
+    }
+    .contactFlexContainer,
+    .formContainer {
+        flex-direction: column;
+        gap: 20px;
+        height: auto;
+    }
+    .contactImgContainer {
+        width: 100vw;
+        height: 200px;
+    }
+    .borderPortfolio {
+        flex-direction: column;
+        width: 98vw;
+        height: auto;
+        border-radius: 20px;
+    }
+    .portfolioImage {
+        border-radius: 20px 20px 0 0;
+        height: 180px;
+    }
+    .portfolioInfo {
+        padding: 10px;
+    }
+}
+
+/* Tablet (min-width: 601px) and (max-width: 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    html, body {
+        font-size: 16px;
+    }
+    header {
+        gap: 10%;
+        padding: 10px 20px;
+    }
+    .wel {
+        font-size: 36px;
+        left: 18%;
+        top: 38%;
+    }
+    .loader {
+        left: 25%;
+        width: 150px;
+    }
+    .mainArticle article p {
+        font-size: 18px;
+        width: 95%;
+    }
+    .name .nam h2,
+    .glitch {
+        font-size: 48px;
+    }
+    .projectHeader div h2 {
+        font-size: 36px;
+        width: 60%;
+    }
+    .projectsContainer {
+        height: 220px;
+    }
+    .projectInner {
+        width: 200px;
+        height: 160px;
+    }
+    .imgContent {
+        height: 100px;
+    }
+    .skillsContainer {
+        font-size: 20px;
+        padding: 30px 0 0 0;
+    }
+    .contactContainer div {
+        left: 10%;
+        padding: 15px;
+    }
+    .bookingContainer {
+        width: 70vw;
+        left: 15vw;
+        padding: 15px;
+        height: auto;
+    }
+    .bookingContainer form h2 {
+        left: 0;
+        font-size: 24px;
+    }
+    .arrowContainer {
+        left: 85%;
+        width: 12%;
+        height: 100px;
+    }
+    .contactFlexContainer,
+    .formContainer {
+        flex-direction: column;
+        gap: 30px;
+        height: auto;
+    }
+    .contactImgContainer {
+        width: 80vw;
+        height: 300px;
+    }
+    .borderPortfolio {
+        flex-direction: column;
+        width: 95vw;
+        height: auto;
+        border-radius: 30px;
+    }
+    .portfolioImage {
+        border-radius: 30px 30px 0 0;
+        height: 250px;
+    }
+    .portfolioInfo {
+        padding: 20px;
+    }
+}
+
+/* Large Desktop (min-width: 1441px) */
+@media (min-width: 1441px) {
+    html, body {
+        font-size: 20px;
+    }
+    header {
+        gap: 35%;
+        padding: 20px 80px;
+    }
+    .wel {
+        font-size: 70px;
+        left: 40%;
+        top: 50%;
+    }
+    .loader {
+        left: 45%;
+        width: 300px;
+    }
+    .mainArticle article p {
+        font-size: 32px;
+        width: 80%;
+    }
+    .name .nam h2,
+    .glitch {
+        font-size: 110px;
+    }
+    .projectHeader div h2 {
+        font-size: 80px;
+        width: 40%;
+    }
+    .projectsContainer {
+        height: 400px;
+    }
+    .projectInner {
+        width: 400px;
+        height: 350px;
+    }
+    .imgContent {
+        height: 250px;
+    }
+    .skillsContainer {
+        font-size: 40px;
+        padding: 100px 0 0 0;
+    }
+    .contactContainer div {
+        left: 35%;
+        padding: 40px;
+    }
+    .bookingContainer {
+        width: 600px;
+        left: 40%;
+        padding: 40px;
+        height: 500px;
+    }
+    .bookingContainer form h2 {
+        left: 0;
+        font-size: 40px;
+    }
+    .arrowContainer {
+        left: 92%;
+        width: 6%;
+        height: 200px;
+    }
+    .contactFlexContainer,
+    .formContainer {
+        flex-direction: row;
+        gap: 15%;
+        height: 100vh;
+    }
+    .contactImgContainer {
+        width: 700px;
+        height: 90vh;
+    }
+    .borderPortfolio {
+        flex-direction: row;
+        width: 85vw;
+        height: 80vh;
+        border-radius: 50px;
+    }
+    .portfolioImage {
+        border-radius: 30px 0 0 30px;
+        height: 100%;
+    }
+    .portfolioInfo {
+        padding: 40px;
+    }
+}
+
+/* ====================
+    END OF MEDIA QUERIES
+    ==================== */
